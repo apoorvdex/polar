@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ConsoleLogger_1 = require("./ConsoleLogger");
+class LoggerDelegate {
+    static set(delegate) {
+        this.delegate = delegate;
+    }
+    static get() {
+        return this.delegate;
+    }
+}
+LoggerDelegate.delegate = new ConsoleLogger_1.ConsoleLogger();
+exports.LoggerDelegate = LoggerDelegate;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9nZ2VyRGVsZWdhdGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJMb2dnZXJEZWxlZ2F0ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLG1EQUE4QztBQUU5QyxNQUFhLGNBQWM7SUFJaEIsTUFBTSxDQUFDLEdBQUcsQ0FBQyxRQUFpQjtRQUMvQixJQUFJLENBQUMsUUFBUSxHQUFHLFFBQVEsQ0FBQztJQUM3QixDQUFDO0lBRU0sTUFBTSxDQUFDLEdBQUc7UUFDYixPQUFPLElBQUksQ0FBQyxRQUFRLENBQUM7SUFDekIsQ0FBQzs7QUFSYyx1QkFBUSxHQUFZLElBQUksNkJBQWEsRUFBRSxDQUFDO0FBRjNELHdDQVlDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtJTG9nZ2VyfSBmcm9tICcuL0lMb2dnZXInO1xuaW1wb3J0IHtDb25zb2xlTG9nZ2VyfSBmcm9tICcuL0NvbnNvbGVMb2dnZXInO1xuXG5leHBvcnQgY2xhc3MgTG9nZ2VyRGVsZWdhdGUge1xuXG4gICAgcHJpdmF0ZSBzdGF0aWMgZGVsZWdhdGU6IElMb2dnZXIgPSBuZXcgQ29uc29sZUxvZ2dlcigpO1xuXG4gICAgcHVibGljIHN0YXRpYyBzZXQoZGVsZWdhdGU6IElMb2dnZXIpIHtcbiAgICAgICAgdGhpcy5kZWxlZ2F0ZSA9IGRlbGVnYXRlO1xuICAgIH1cblxuICAgIHB1YmxpYyBzdGF0aWMgZ2V0KCk6IElMb2dnZXIge1xuICAgICAgICByZXR1cm4gdGhpcy5kZWxlZ2F0ZTtcbiAgICB9XG5cbn1cbiJdfQ==

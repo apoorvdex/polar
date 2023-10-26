@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class IPCSender {
+    constructor(electronContext) {
+        this.electronContext = electronContext;
+    }
+}
+exports.IPCSender = IPCSender;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSVBDU2VuZGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiSVBDU2VuZGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEsTUFBYSxTQUFTO0lBSWxCLFlBQVksZUFBZ0M7UUFDeEMsSUFBSSxDQUFDLGVBQWUsR0FBRyxlQUFlLENBQUM7SUFDM0MsQ0FBQztDQUVKO0FBUkQsOEJBUUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0VsZWN0cm9uQ29udGV4dH0gZnJvbSAnLi9FbGVjdHJvbkNvbnRleHQnO1xuXG5leHBvcnQgY2xhc3MgSVBDU2VuZGVyIHtcblxuICAgIHB1YmxpYyByZWFkb25seSBlbGVjdHJvbkNvbnRleHQ6IEVsZWN0cm9uQ29udGV4dDtcblxuICAgIGNvbnN0cnVjdG9yKGVsZWN0cm9uQ29udGV4dDogRWxlY3Ryb25Db250ZXh0KSB7XG4gICAgICAgIHRoaXMuZWxlY3Ryb25Db250ZXh0ID0gZWxlY3Ryb25Db250ZXh0O1xuICAgIH1cblxufVxuIl19

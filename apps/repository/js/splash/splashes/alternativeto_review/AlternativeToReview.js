@@ -1,0 +1,36 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const Splash_1 = require("../../Splash");
+const EventTrackedLink_1 = require("../components/EventTrackedLink");
+const LINK = 'https://alternativeto.net/discussions/AddThread/?urlName=applications&itemId=e992e321-70ca-4d8f-aa59-d5a2be633787&type=review';
+const EVENT_CATEGORY = 'splash-alternative-to-review';
+class AlternativeToReview extends react_1.default.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (react_1.default.createElement(Splash_1.Splash, { settingKey: this.props.settingKey },
+            react_1.default.createElement("div", { style: {
+                    display: 'flex'
+                } },
+                react_1.default.createElement("div", { className: "w-100" },
+                    react_1.default.createElement("h2", null, "Could You Review Polar on AlternativeTo?"),
+                    react_1.default.createElement("p", { className: "h5" },
+                        "Could you take ",
+                        react_1.default.createElement("b", null, "1 minute"),
+                        " and leave us a review?"),
+                    react_1.default.createElement("p", null, "Many users use this site to discover new software and we think they could benefit from using Polar.")),
+                react_1.default.createElement("div", null,
+                    react_1.default.createElement("p", { className: "text-center m-2" },
+                        react_1.default.createElement(EventTrackedLink_1.EventTrackedLink, { className: "", eventCategory: EVENT_CATEGORY, eventAction: 'clicked-image', href: LINK },
+                            react_1.default.createElement("i", { style: { fontSize: '125px' }, className: "fas fa-vote-yea" }))))),
+            react_1.default.createElement("p", { className: "text-center mt-4 p-2" },
+                react_1.default.createElement(EventTrackedLink_1.EventTrackedLink, { eventCategory: EVENT_CATEGORY, eventAction: 'clicked-cta', href: LINK }, "Review Polar on AlternativeTo"))));
+    }
+}
+exports.AlternativeToReview = AlternativeToReview;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQWx0ZXJuYXRpdmVUb1Jldmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkFsdGVybmF0aXZlVG9SZXZpZXcudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBQ0Esa0RBQTBCO0FBQzFCLHlDQUFvQztBQUlwQyxxRUFBZ0U7QUFFaEUsTUFBTSxJQUFJLEdBQUcsK0hBQStILENBQUM7QUFDN0ksTUFBTSxjQUFjLEdBQUcsOEJBQThCLENBQUM7QUFFdEQsTUFBYSxtQkFBb0IsU0FBUSxlQUFLLENBQUMsU0FBeUI7SUFFcEUsWUFBWSxLQUFhO1FBQ3JCLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUNqQixDQUFDO0lBRU0sTUFBTTtRQUNULE9BQU8sQ0FFSCw4QkFBQyxlQUFNLElBQUMsVUFBVSxFQUFFLElBQUksQ0FBQyxLQUFLLENBQUMsVUFBVTtZQUVyQyx1Q0FBSyxLQUFLLEVBQUU7b0JBQ1IsT0FBTyxFQUFFLE1BQU07aUJBQ2Q7Z0JBRUQsdUNBQUssU0FBUyxFQUFDLE9BQU87b0JBRWxCLHFGQUFpRDtvQkFFakQscUNBQUcsU0FBUyxFQUFDLElBQUk7O3dCQUNFLG9EQUFlO2tEQUM5QjtvQkFFSiwrSUFHSSxDQUVGO2dCQUVOO29CQUVJLHFDQUFHLFNBQVMsRUFBQyxpQkFBaUI7d0JBRTFCLDhCQUFDLG1DQUFnQixJQUFDLFNBQVMsRUFBQyxFQUFFLEVBQ1osYUFBYSxFQUFFLGNBQWMsRUFDN0IsV0FBVyxFQUFDLGVBQWUsRUFDM0IsSUFBSSxFQUFFLElBQUk7NEJBRXhCLHFDQUFHLEtBQUssRUFBRSxFQUFDLFFBQVEsRUFBRSxPQUFPLEVBQUMsRUFBRSxTQUFTLEVBQUMsaUJBQWlCLEdBQUssQ0FFaEQsQ0FFbkIsQ0FFRixDQUdKO1lBRU4scUNBQUcsU0FBUyxFQUFDLHNCQUFzQjtnQkFFL0IsOEJBQUMsbUNBQWdCLElBQUMsYUFBYSxFQUFFLGNBQWMsRUFDN0IsV0FBVyxFQUFDLGFBQWEsRUFDekIsSUFBSSxFQUFFLElBQUksb0NBSVQsQ0FFbkIsQ0FFQyxDQUVaLENBQUM7SUFDTixDQUFDO0NBRUo7QUFuRUQsa0RBbUVDIiwic291cmNlc0NvbnRlbnQiOlsiLyogZXNsaW50IHJlYWN0L25vLW11bHRpLWNvbXA6IDAsIHJlYWN0L3Byb3AtdHlwZXM6IDAgKi9cbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQge1NwbGFzaH0gZnJvbSAnLi4vLi4vU3BsYXNoJztcbmltcG9ydCB7RW1iZWRkZWRJbWFnZXN9IGZyb20gJy4uL3doYXRzX25ldy9FbWJlZGRlZEltYWdlcyc7XG5pbXBvcnQge1NwbGl0TGF5b3V0LCBTcGxpdExheW91dExlZnQsIFNwbGl0TGF5b3V0UmlnaHR9IGZyb20gJy4uLy4uLy4uLy4uLy4uLy4uL3dlYi9qcy91aS9zcGxpdF9sYXlvdXQvU3BsaXRMYXlvdXQnO1xuaW1wb3J0IHtDYWxsVG9BY3Rpb25MaW5rfSBmcm9tICcuLi9jb21wb25lbnRzL0NhbGxUb0FjdGlvbkxpbmsnO1xuaW1wb3J0IHtFdmVudFRyYWNrZWRMaW5rfSBmcm9tICcuLi9jb21wb25lbnRzL0V2ZW50VHJhY2tlZExpbmsnO1xuXG5jb25zdCBMSU5LID0gJ2h0dHBzOi8vYWx0ZXJuYXRpdmV0by5uZXQvZGlzY3Vzc2lvbnMvQWRkVGhyZWFkLz91cmxOYW1lPWFwcGxpY2F0aW9ucyZpdGVtSWQ9ZTk5MmUzMjEtNzBjYS00ZDhmLWFhNTktZDVhMmJlNjMzNzg3JnR5cGU9cmV2aWV3JztcbmNvbnN0IEVWRU5UX0NBVEVHT1JZID0gJ3NwbGFzaC1hbHRlcm5hdGl2ZS10by1yZXZpZXcnO1xuXG5leHBvcnQgY2xhc3MgQWx0ZXJuYXRpdmVUb1JldmlldyBleHRlbmRzIFJlYWN0LkNvbXBvbmVudDxJUHJvcHMsIElTdGF0ZT4ge1xuXG4gICAgY29uc3RydWN0b3IocHJvcHM6IElQcm9wcykge1xuICAgICAgICBzdXBlcihwcm9wcyk7XG4gICAgfVxuXG4gICAgcHVibGljIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcblxuICAgICAgICAgICAgPFNwbGFzaCBzZXR0aW5nS2V5PXt0aGlzLnByb3BzLnNldHRpbmdLZXl9PlxuXG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCdcbiAgICAgICAgICAgICAgICAgICAgfX0+XG5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTEwMFwiPlxuXG4gICAgICAgICAgICAgICAgICAgICAgICA8aDI+Q291bGQgWW91IFJldmlldyBQb2xhciBvbiBBbHRlcm5hdGl2ZVRvPzwvaDI+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImg1XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgQ291bGQgeW91IHRha2UgPGI+MSBtaW51dGU8L2I+IGFuZCBsZWF2ZSB1cyBhIHJldmlldz9cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cblxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgTWFueSB1c2VycyB1c2UgdGhpcyBzaXRlIHRvIGRpc2NvdmVyIG5ldyBzb2Z0d2FyZSBhbmRcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3ZSB0aGluayB0aGV5IGNvdWxkIGJlbmVmaXQgZnJvbSB1c2luZyBQb2xhci5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cblxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgICA8ZGl2PlxuXG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LWNlbnRlciBtLTJcIj5cblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxFdmVudFRyYWNrZWRMaW5rIGNsYXNzTmFtZT1cIlwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXZlbnRDYXRlZ29yeT17RVZFTlRfQ0FURUdPUll9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXZlbnRBY3Rpb249J2NsaWNrZWQtaW1hZ2UnXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17TElOS30+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGkgc3R5bGU9e3tmb250U2l6ZTogJzEyNXB4J319IGNsYXNzTmFtZT1cImZhcyBmYS12b3RlLXllYVwiPjwvaT5cblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvRXZlbnRUcmFja2VkTGluaz5cblxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPlxuXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuXG5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQtY2VudGVyIG10LTQgcC0yXCI+XG5cbiAgICAgICAgICAgICAgICAgICAgPEV2ZW50VHJhY2tlZExpbmsgZXZlbnRDYXRlZ29yeT17RVZFTlRfQ0FURUdPUll9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGV2ZW50QWN0aW9uPSdjbGlja2VkLWN0YSdcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17TElOS30+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIFJldmlldyBQb2xhciBvbiBBbHRlcm5hdGl2ZVRvXG5cbiAgICAgICAgICAgICAgICAgICAgPC9FdmVudFRyYWNrZWRMaW5rPlxuXG4gICAgICAgICAgICAgICAgPC9wPlxuXG4gICAgICAgICAgICA8L1NwbGFzaD5cblxuICAgICAgICApO1xuICAgIH1cblxufVxuXG5pbnRlcmZhY2UgSVByb3BzIHtcbiAgICByZWFkb25seSBzZXR0aW5nS2V5OiBzdHJpbmc7XG59XG5cbmludGVyZmFjZSBJU3RhdGUge1xufVxuXG4iXX0=

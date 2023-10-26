@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class IconStyles {
+}
+IconStyles.ICON = {
+    fontSize: '16px',
+    color: '#a4a4a4',
+    width: '16px'
+};
+exports.IconStyles = IconStyles;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSWNvblN0eWxlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkljb25TdHlsZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxNQUFhLFVBQVU7O0FBRUwsZUFBSSxHQUF3QjtJQUN0QyxRQUFRLEVBQUUsTUFBTTtJQUNoQixLQUFLLEVBQUUsU0FBUztJQUNoQixLQUFLLEVBQUUsTUFBTTtDQUNoQixDQUFDO0FBTk4sZ0NBUUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgY2xhc3MgSWNvblN0eWxlcyB7XG5cbiAgICBwdWJsaWMgc3RhdGljIElDT046IFJlYWN0LkNTU1Byb3BlcnRpZXMgPSB7XG4gICAgICAgIGZvbnRTaXplOiAnMTZweCcsXG4gICAgICAgIGNvbG9yOiAnI2E0YTRhNCcsXG4gICAgICAgIHdpZHRoOiAnMTZweCdcbiAgICB9O1xuXG59XG4iXX0=

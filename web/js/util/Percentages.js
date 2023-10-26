@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Percentages {
+    static calculate(value, total) {
+        return Percentages.round(100 * (value / total));
+    }
+    static round(perc) {
+        return Math.round(perc * 100) / 100;
+    }
+}
+exports.Percentages = Percentages;
+function round(perc) {
+    return Percentages.round(perc);
+}
+exports.round = round;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGVyY2VudGFnZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJQZXJjZW50YWdlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLE1BQWEsV0FBVztJQUViLE1BQU0sQ0FBQyxTQUFTLENBQUMsS0FBYSxFQUFFLEtBQWE7UUFDaEQsT0FBTyxXQUFXLENBQUMsS0FBSyxDQUFFLEdBQUcsR0FBRyxDQUFDLEtBQUssR0FBRyxLQUFLLENBQUMsQ0FBQyxDQUFDO0lBQ3JELENBQUM7SUFFTSxNQUFNLENBQUMsS0FBSyxDQUFDLElBQVk7UUFDNUIsT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksR0FBRyxHQUFHLENBQUMsR0FBRyxHQUFHLENBQUM7SUFDeEMsQ0FBQztDQUVKO0FBVkQsa0NBVUM7QUFFRCxTQUFnQixLQUFLLENBQUMsSUFBWTtJQUM5QixPQUFPLFdBQVcsQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLENBQUM7QUFDbkMsQ0FBQztBQUZELHNCQUVDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIFBlcmNlbnRhZ2VzIHtcblxuICAgIHB1YmxpYyBzdGF0aWMgY2FsY3VsYXRlKHZhbHVlOiBudW1iZXIsIHRvdGFsOiBudW1iZXIpOiBudW1iZXIge1xuICAgICAgICByZXR1cm4gUGVyY2VudGFnZXMucm91bmQoIDEwMCAqICh2YWx1ZSAvIHRvdGFsKSk7XG4gICAgfVxuXG4gICAgcHVibGljIHN0YXRpYyByb3VuZChwZXJjOiBudW1iZXIpOiBudW1iZXIge1xuICAgICAgICByZXR1cm4gTWF0aC5yb3VuZChwZXJjICogMTAwKSAvIDEwMDtcbiAgICB9XG5cbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHJvdW5kKHBlcmM6IG51bWJlcikge1xuICAgIHJldHVybiBQZXJjZW50YWdlcy5yb3VuZChwZXJjKTtcbn1cbiJdfQ==

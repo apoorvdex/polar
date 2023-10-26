@@ -1,0 +1,140 @@
+
+.annotationbar * {
+    font-size: 21px !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.save-provision {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 2px;
+    border: solid 0.5px #a6a6a6;
+    padding: 8px 7px 7px 6px;
+    position: absolute;
+    top: 3px;
+    right: -30px;
+    z-index: -1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.save-provision i, .save-bookmark i {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 14px !important;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.save-bookmark {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 2px;
+    border: solid 0.5px #a6a6a6;
+    padding: 8px 7px 7px 10px;
+    position: absolute;
+    top: 1px;
+    right: -72px;
+    z-index: -1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.save-provision select, .save-bookmark select, .save-bookmark input, .save-provision input {
+    height: 22px;
+    font-size: 12px !important;
+    width: 116px;
+    border: solid 1px #f2f3f7;
+    margin-bottom: 7px;
+    margin-top: 36px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+.save-bookmark input:hover, .save-bookmark input:focus {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+.save-provision select option, .save-bookmark select option {
+    font-size: 12px !important;
+}
+
+.save-provision button, .save-bookmark button {
+    font-size: 12px !important;
+    background: #1283ed;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 26px;
+    margin-left: 35%;
+    cursor: pointer;
+}
+
+.annotationbar {
+    background-color: transparent;
+    /*background-color: #333333;*/
+    width: 115px;
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*width: 100px;*/
+}
+
+.annotationbar-btn:hover,
+.annotationbar-btn {
+    /*background-color: #333333;*/
+    /*border-color: #333333;*/
+    background-color: #fff;
+    border: solid 0.5px #a6a6a6;
+    padding: 0px 7px !important;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.annotationbar-btn {
+    /*opacity: 0.8;*/
+}
+
+.annotationbar-btn:hover {
+    opacity: 1.0;
+}
+
+.annotationbar-popover {
+    background-color: #333333;
+}
+
+.bs-popover-auto[x-placement^=top] .arrow::after,
+.bs-popover-top .arrow::after {
+    border-top-color: #333333;
+}
+
+.annotationbar .annotationbar-btn span {
+    font-size: 14px;
+}

@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class SenderReference {
+    send(channel, message) {
+    }
+}
+exports.SenderReference = SenderReference;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU2VuZGVyUmVmZXJlbmNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiU2VuZGVyUmVmZXJlbmNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsTUFBYSxlQUFlO0lBRXhCLElBQUksQ0FBQyxPQUFlLEVBQUUsT0FBWTtJQUVsQyxDQUFDO0NBRUo7QUFORCwwQ0FNQyIsInNvdXJjZXNDb250ZW50IjpbIlxuZXhwb3J0IGNsYXNzIFNlbmRlclJlZmVyZW5jZSB7XG5cbiAgICBzZW5kKGNoYW5uZWw6IHN0cmluZywgbWVzc2FnZTogYW55KTogdm9pZCB7XG5cbiAgICB9XG5cbn1cbiJdfQ==

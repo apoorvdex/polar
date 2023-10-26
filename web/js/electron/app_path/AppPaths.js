@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const FilePaths_1 = require("../../util/FilePaths");
+const AppPath_1 = require("./AppPath");
+class AppPaths {
+    static requireRelative(relativePath) {
+        const entryPoint = FilePaths_1.FilePaths.join(AppPath_1.AppPath.get(), relativePath);
+        require(entryPoint);
+    }
+}
+exports.AppPaths = AppPaths;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQXBwUGF0aHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJBcHBQYXRocy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLG9EQUErQztBQUMvQyx1Q0FBa0M7QUFFbEMsTUFBYSxRQUFRO0lBRVYsTUFBTSxDQUFDLGVBQWUsQ0FBQyxZQUFvQjtRQUM5QyxNQUFNLFVBQVUsR0FBRyxxQkFBUyxDQUFDLElBQUksQ0FBQyxpQkFBTyxDQUFDLEdBQUcsRUFBRSxFQUFFLFlBQVksQ0FBQyxDQUFDO1FBQy9ELE9BQU8sQ0FBQyxVQUFVLENBQUMsQ0FBQztJQUN4QixDQUFDO0NBRUo7QUFQRCw0QkFPQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RmlsZVBhdGhzfSBmcm9tIFwiLi4vLi4vdXRpbC9GaWxlUGF0aHNcIjtcbmltcG9ydCB7QXBwUGF0aH0gZnJvbSBcIi4vQXBwUGF0aFwiO1xuXG5leHBvcnQgY2xhc3MgQXBwUGF0aHMge1xuXG4gICAgcHVibGljIHN0YXRpYyByZXF1aXJlUmVsYXRpdmUocmVsYXRpdmVQYXRoOiBzdHJpbmcpIHtcbiAgICAgICAgY29uc3QgZW50cnlQb2ludCA9IEZpbGVQYXRocy5qb2luKEFwcFBhdGguZ2V0KCksIHJlbGF0aXZlUGF0aCk7XG4gICAgICAgIHJlcXVpcmUoZW50cnlQb2ludCk7XG4gICAgfVxuXG59XG4iXX0=

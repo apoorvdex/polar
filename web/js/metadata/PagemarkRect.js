@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const AnnotationRect_1 = require("./AnnotationRect");
+class PagemarkRect extends AnnotationRect_1.AnnotationRect {
+}
+exports.PagemarkRect = PagemarkRect;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFnZW1hcmtSZWN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUGFnZW1hcmtSZWN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBR0EscURBQWdEO0FBRWhELE1BQWEsWUFBYSxTQUFRLCtCQUFjO0NBRS9DO0FBRkQsb0NBRUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqXG4gKi9cbmltcG9ydCB7QW5ub3RhdGlvblJlY3R9IGZyb20gXCIuL0Fubm90YXRpb25SZWN0XCI7XG5cbmV4cG9ydCBjbGFzcyBQYWdlbWFya1JlY3QgZXh0ZW5kcyBBbm5vdGF0aW9uUmVjdCB7XG5cbn1cbiJdfQ==

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Preconditions_1 = require("../../Preconditions");
+class ProxyServerConfig {
+    constructor(port = 8600) {
+        this.port = Preconditions_1.Preconditions.assertNotNull(port, "port");
+    }
+}
+exports.ProxyServerConfig = ProxyServerConfig;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUHJveHlTZXJ2ZXJDb25maWcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJQcm94eVNlcnZlckNvbmZpZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHVEQUFrRDtBQUVsRCxNQUFhLGlCQUFpQjtJQUkxQixZQUFZLE9BQWUsSUFBSTtRQUMzQixJQUFJLENBQUMsSUFBSSxHQUFHLDZCQUFhLENBQUMsYUFBYSxDQUFDLElBQUksRUFBRSxNQUFNLENBQUMsQ0FBQztJQUMxRCxDQUFDO0NBRUo7QUFSRCw4Q0FRQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7UHJlY29uZGl0aW9uc30gZnJvbSAnLi4vLi4vUHJlY29uZGl0aW9ucyc7XG5cbmV4cG9ydCBjbGFzcyBQcm94eVNlcnZlckNvbmZpZyB7XG5cbiAgICBwdWJsaWMgcmVhZG9ubHkgcG9ydDogbnVtYmVyO1xuXG4gICAgY29uc3RydWN0b3IocG9ydDogbnVtYmVyID0gODYwMCkge1xuICAgICAgICB0aGlzLnBvcnQgPSBQcmVjb25kaXRpb25zLmFzc2VydE5vdE51bGwocG9ydCwgXCJwb3J0XCIpO1xuICAgIH1cblxufVxuIl19

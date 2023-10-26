@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class VisualLogger {
+}
+exports.VisualLogger = VisualLogger;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVmlzdWFsTG9nZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVmlzdWFsTG9nZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBR0EsTUFBYSxZQUFZO0NBRXhCO0FBRkQsb0NBRUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEEgbG9nZ2VyIHRoYXQgZGlzcGxheXMgbWVzc2FnZXMgdmlzdWFsbHkuXG4gKi9cbmV4cG9ydCBjbGFzcyBWaXN1YWxMb2dnZXIge1xuXG59XG4iXX0=

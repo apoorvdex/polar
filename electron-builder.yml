@@ -1,0 +1,85 @@
+productName: Polar Bookshelf
+# TODO: unfortunately this needs to be set.  Not sure why but it reverted to
+# using nightly versions when not set.  It should use package.json
+electronVersion: 3.0.8
+appId: io.inputneuron/polar
+compression: normal
+npmRebuild: false
+# TODO: enable this in the future once we sign all the linux builds.
+#forceCodeSigning: true
+directories:
+  output: dist
+  buildResources: build
+  app: .
+
+mac:
+  category: Reference
+  icon: ./icons/icon.icns
+  target:
+    - target: dmg
+    - target: zip
+  fileAssociations:
+    - ext: pdf
+      role: Viewer
+
+linux:
+  # TODO: consider using a custom productName here of polar-bookshelf to fix
+  # a bug on Linux with the application windows.
+  artifactName: ${name}-${version}-${arch}.${ext}
+  synopsis: Polar Bookshelf
+  description: Polar Bookshelf
+  category: Office
+  target:
+    - target: deb
+    - target: tar.gz
+    - target: snap
+
+  # WARNING: 'icon' is NOT supported well or at all on Linux. the only way to
+  # get them to work is to define them under 'mac' and use the icon.icns file
+  # to specify the icons.
+
+  fileAssociations:
+    - ext: pdf
+      mimeType: application/pdf
+
+nsis:
+  artifactName: ${name}-${version}-${arch}.${ext}
+
+appx:
+  artifactName: ${name}-${version}-${arch}.${ext}
+  applicationId: polar
+  identityName: 25130KevinBurton.PolarBookshelf
+  publisher: CN=D3591277-F57D-4C75-B342-D158E6C4AAF5
+  publisherDisplayName: Kevin Burton
+
+win:
+  artifactName: ${name}-${version}-${arch}.${ext}
+  target:
+    - target: nsis
+    #- target: appx
+    #- target: portable
+  icon: ./icons/icon-512x512.png
+  fileAssociations:
+    - ext: pdf
+      description: Polar PDF
+  publisherName: Spinn3r
+
+snap:
+
+  confinement: "strict"
+  grade: "stable"
+  stagePackages:
+    - "default"
+  plugs:
+    - default
+    - home
+    #- "X11"
+    #- "wayland"
+
+# https://www.electron.build/configuration/publish
+# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+publish:
+  provider: github
+  publishAutoUpdate: true
+
+asar: true

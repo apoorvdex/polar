@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ContentCapture_1 = require("./ContentCapture");
+const Preconditions_1 = require("../../Preconditions");
+Preconditions_1.Preconditions.assertPresent(ContentCapture_1.ContentCapture);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2FwdHVyZVByZWxvYWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJDYXB0dXJlUHJlbG9hZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFnRDtBQUNoRCx1REFBa0Q7QUFFbEQsNkJBQWEsQ0FBQyxhQUFhLENBQUMsK0JBQWMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDb250ZW50Q2FwdHVyZX0gZnJvbSBcIi4vQ29udGVudENhcHR1cmVcIjtcbmltcG9ydCB7UHJlY29uZGl0aW9uc30gZnJvbSAnLi4vLi4vUHJlY29uZGl0aW9ucyc7XG5cblByZWNvbmRpdGlvbnMuYXNzZXJ0UHJlc2VudChDb250ZW50Q2FwdHVyZSk7XG5cbiJdfQ==

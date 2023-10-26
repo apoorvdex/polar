@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const { SerializedObject } = require("./SerializedObject.js");
+class TextRect extends SerializedObject {
+    constructor(val) {
+        super(val);
+        this.text = null;
+        this.rect = null;
+        this.init(val);
+    }
+}
+exports.TextRect = TextRect;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGV4dFJlY3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUZXh0UmVjdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLE1BQU0sRUFBQyxnQkFBZ0IsRUFBQyxHQUFHLE9BQU8sQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO0FBRTVELE1BQWEsUUFBUyxTQUFRLGdCQUFnQjtJQUUxQyxZQUFZLEdBQVE7UUFFaEIsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1FBR1gsSUFBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7UUFHakIsSUFBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7UUFFakIsSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUVuQixDQUFDO0NBRUo7QUFoQkQsNEJBZ0JDIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qge1NlcmlhbGl6ZWRPYmplY3R9ID0gcmVxdWlyZShcIi4vU2VyaWFsaXplZE9iamVjdC5qc1wiKTtcblxuZXhwb3J0IGNsYXNzIFRleHRSZWN0IGV4dGVuZHMgU2VyaWFsaXplZE9iamVjdCB7XG5cbiAgICBjb25zdHJ1Y3Rvcih2YWw6IGFueSkge1xuXG4gICAgICAgIHN1cGVyKHZhbCk7XG5cbiAgICAgICAgLy8gdGhlIGFjdHVhbCB0ZXh0IGluIHRoaXMgcmVjdC5cbiAgICAgICAgdGhpcy50ZXh0ID0gbnVsbDtcblxuICAgICAgICAvLyBBIHJlY3QgYXJlYSB0aGF0IHRoZSB1c2VyIGhhcyBzZWxlY3RlZCB0ZXh0LlxuICAgICAgICB0aGlzLnJlY3QgPSBudWxsO1xuXG4gICAgICAgIHRoaXMuaW5pdCh2YWwpO1xuXG4gICAgfVxuXG59XG4iXX0=

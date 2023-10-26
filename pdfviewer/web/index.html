@@ -1,0 +1,1646 @@
+﻿<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
+<html dir="ltr" mozdisallowselectionprint>
+<head>
+
+    <meta charset="utf-8">
+
+    <link rel="icon" href="/icon.ico">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/node_modules/summernote/dist/summernote-bs4.css">
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <!--<link rel="stylesheet" href="/node_modules/@burtonator/react-buttons/dist/react-buttons.css">-->
+    <link rel="stylesheet" href="/node_modules/@burtonator/react-dropdown/dist/react-dropdown.css">
+
+    <!-- TODO: these need to load locally before we enable firebase in production -->
+    <!--<script src="/node_modules/firebase/firebase.js"></script>-->
+    <!--<script src="/node_modules/firebaseui/dist/firebaseui.js"></script>-->
+    <!--<link rel="stylesheet" href="/node_modules/firebaseui/dist/firebaseui.css" />-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+
+
+    <link rel="stylesheet" href="viewer.css">
+
+    <!-- BEGIN polar customization -->
+
+    <meta name="polar-doc-format" content="pdf">
+
+    <link rel="stylesheet" href="/node_modules/toastr/build/toastr.min.css">
+
+    <link rel="stylesheet" href="/pdfviewer-custom/polar.css">
+
+    <script src="/apps/init.js"></script>
+
+    <script>
+
+        const fallbackLoader = () => {
+
+            // REQUIRE_ENTRY_POINT: there seems to be an Electron bug where when
+            // loading over HTTP we can't find node_modules until we require().  We can
+            // only find standard modules like 'fs' and 'electron' but not custom
+            // modules so we have to just have these four lines repeated over and over
+            // for each of our main apps.  In the future we should try to track down
+            // why this is happening but I spent 1-2 hours on trying to figure out
+            // the root cause with no resolution and this is a temporary workaround.
+
+            if (typeof require === 'function') {
+
+                const {remote} = require('electron');
+                const path = require('path');
+                const appPath = remote.getGlobal("appPath");
+
+                require(path.join(appPath, "web", "js", "apps", "electron.js"));
+            } else {
+                console.warn("Not running within Electron");
+            }
+
+        }
+
+        var annotations = {
+            "annotationInfo": {},
+            "version": 2,
+            "attachments": {},
+            "docInfo": {
+                "progress": 0,
+                "pagemarkType": "SINGLE_COLUMN",
+                "properties": {},
+                "archived": false,
+                "flagged": false,
+                "tags": {},
+                "nrPages": 14,
+                "fingerprint": "110dd61fd57444010b1ab5ff38782f0f",
+                "added": "2019-03-20T21:39:38.925Z",
+                "uuid": "z2019-03-24T21:28:02.493Z+000003-603823962482",
+                "lastUpdated": "2019-03-24T21:28:02.493Z",
+                "nrComments": 0,
+                "nrNotes": 0,
+                "nrFlashcards": 0,
+                "nrTextHighlights": 11,
+                "nrAreaHighlights": 0,
+                "nrAnnotations": 11
+            },
+            "pageMetas": {
+                "1": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 1
+                    }
+                },
+                "2": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {
+                        "12h65o6wQ6": {
+                            "id": "12h65o6wQ6",
+                            "guid": "12h65o6wQ6",
+                            "created": "2019-03-20T21:42:14.157Z",
+                            "itlsData": {
+                                "type": "provision",
+                                "data": {}
+                            },
+                            "lastUpdated": "2019-03-20T21:42:14.157Z",
+                            "rects": {
+                                "0": {
+                                    "left": 444.227968,
+                                    "top": 709.6,
+                                    "right": 504.8855680000001,
+                                    "bottom": 725.6,
+                                    "width": 60.657600000000116,
+                                    "height": 16
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "Over",
+                                    "rect": {
+                                        "left": 444.227968,
+                                        "top": 709.6,
+                                        "right": 475.76992,
+                                        "bottom": 725.6,
+                                        "width": 31.541952000000006,
+                                        "height": 16
+                                    }
+                                },
+                                "1": {
+                                    "text": "view",
+                                    "rect": {
+                                        "left": 474.9611520000001,
+                                        "top": 709.6,
+                                        "right": 504.8855680000001,
+                                        "bottom": 725.6,
+                                        "width": 29.924416000000004,
+                                        "height": 16
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nOver\nview"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:1buEfG9oUz",
+                                    "width": 76,
+                                    "height": 21,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "red"
+                        },
+                        "1TEm4JBZ3k": {
+                            "id": "1TEm4JBZ3k",
+                            "guid": "1TEm4JBZ3k",
+                            "created": "2019-03-20T21:42:16.804Z",
+                            "lastUpdated": "2019-03-20T21:42:16.804Z",
+                            "rects": {
+                                "0": {
+                                    "left": 498.7951656,
+                                    "top": 942.4000000000001,
+                                    "right": 548.9937448,
+                                    "bottom": 956,
+                                    "width": 50.19857919999993,
+                                    "height": 13.599999999999909
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "seq",
+                                    "rect": {
+                                        "left": 498.7951656,
+                                        "top": 942.4000000000001,
+                                        "right": 516.8352800000001,
+                                        "bottom": 956,
+                                        "width": 18.0401144,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "uence",
+                                    "rect": {
+                                        "left": 516.83528,
+                                        "top": 942.4000000000001,
+                                        "right": 548.9937448,
+                                        "bottom": 956,
+                                        "width": 32.158464800000004,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nseq\nuence"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12ULtVYgiV",
+                                    "width": 63,
+                                    "height": 17,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "yellow"
+                        },
+                        "1NvKhXWdvc": {
+                            "id": "1NvKhXWdvc",
+                            "guid": "1NvKhXWdvc",
+                            "created": "2019-03-20T21:42:19.359Z",
+                            "lastUpdated": "2019-03-20T21:42:19.359Z",
+                            "rects": {
+                                "0": {
+                                    "left": 94.2280128,
+                                    "top": 928.8000000000001,
+                                    "right": 171.642816,
+                                    "bottom": 942.4000000000001,
+                                    "width": 77.41480320000001,
+                                    "height": 13.600000000000023
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "implem",
+                                    "rect": {
+                                        "left": 94.2280128,
+                                        "top": 928.8000000000001,
+                                        "right": 131.0192064,
+                                        "bottom": 942.4000000000001,
+                                        "width": 36.7911936,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "entation",
+                                    "rect": {
+                                        "left": 131.0192064,
+                                        "top": 928.8000000000001,
+                                        "right": 171.642816,
+                                        "bottom": 942.4000000000001,
+                                        "width": 40.6236096,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nimplem\nentation"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12PeLaped4",
+                                    "width": 97,
+                                    "height": 17,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "green"
+                        }
+                    },
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 2
+                    }
+                },
+                "3": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {
+                        "12ZNSavKe8": {
+                            "id": "12ZNSavKe8",
+                            "guid": "12ZNSavKe8",
+                            "created": "2019-03-20T21:42:23.308Z",
+                            "lastUpdated": "2019-03-20T21:42:23.308Z",
+                            "rects": {
+                                "0": {
+                                    "left": 260.43818400000004,
+                                    "top": 574.4,
+                                    "right": 285.5632752,
+                                    "bottom": 588,
+                                    "width": 25.125091199999986,
+                                    "height": 13.600000000000023
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "si",
+                                    "rect": {
+                                        "left": 260.43818400000004,
+                                        "top": 574.4,
+                                        "right": 273.00072960000006,
+                                        "bottom": 588,
+                                        "width": 12.5625456,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "de",
+                                    "rect": {
+                                        "left": 273.0007296,
+                                        "top": 574.4,
+                                        "right": 285.5632752,
+                                        "bottom": 588,
+                                        "width": 12.5625456,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nsi\nde"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:1BDNeucdF5",
+                                    "width": 31,
+                                    "height": 17,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "green"
+                        },
+                        "125quYKM5m": {
+                            "id": "125quYKM5m",
+                            "guid": "125quYKM5m",
+                            "created": "2019-03-24T21:26:50.810Z",
+                            "lastUpdated": "2019-03-24T21:26:50.810Z",
+                            "rects": {
+                                "0": {
+                                    "left": 260.43818400000004,
+                                    "top": 413.6,
+                                    "right": 461.4389136,
+                                    "bottom": 428,
+                                    "width": 201.00072959999994,
+                                    "height": 14.399999999999977
+                                },
+                                "1": {
+                                    "left": 72,
+                                    "top": 427.20000000000005,
+                                    "right": 467.7201864000001,
+                                    "bottom": 441.6,
+                                    "width": 395.7201864000001,
+                                    "height": 14.399999999999977
+                                },
+                                "2": {
+                                    "left": 72,
+                                    "top": 440.8,
+                                    "right": 285.5632752,
+                                    "bottom": 455.20000000000005,
+                                    "width": 213.56327520000002,
+                                    "height": 14.400000000000034
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "store false to interpreter stack",
+                                    "rect": {
+                                        "left": 260.43818400000004,
+                                        "top": 413.6,
+                                        "right": 461.4389136,
+                                        "bottom": 428,
+                                        "width": 201.0007296,
+                                        "height": 14.4
+                                    }
+                                },
+                                "1": {
+                                    "text": "mov eax, edx(4)        // (*) load object class word for primes",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 427.20000000000005,
+                                        "right": 467.7201864000001,
+                                        "bottom": 441.6,
+                                        "width": 395.72018640000005,
+                                        "height": 14.4
+                                    }
+                                },
+                                "2": {
+                                    "text": "and eax, -4            // (*) mask",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 440.8,
+                                        "right": 285.5632752,
+                                        "bottom": 455.20000000000005,
+                                        "width": 213.56327520000002,
+                                        "height": 14.4
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nstore false to interpreter stack\nmov eax, edx(4)        // (*) load object class word for primes\nand eax, -4            // (*) mask"
+                            },
+                            "itlsData": {
+                                "type": "PROVISION",
+                                "value": {
+                                    "title": "provision_test_3",
+                                    "value": "provision_test_3",
+                                    "color": "blue"
+                                }
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:1QEsy9QvuF",
+                                    "width": 494,
+                                    "height": 51,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "blue"
+                        },
+                        "125JbpBwbR": {
+                            "id": "125JbpBwbR",
+                            "guid": "125JbpBwbR",
+                            "created": "2019-03-24T21:27:30.371Z",
+                            "lastUpdated": "2019-03-24T21:27:30.371Z",
+                            "rects": {
+                                "0": {
+                                    "left": 316.9696392000001,
+                                    "top": 493.6,
+                                    "right": 404.90745840000005,
+                                    "bottom": 508,
+                                    "width": 87.93781919999998,
+                                    "height": 14.399999999999977
+                                },
+                                "1": {
+                                    "left": 72,
+                                    "top": 507.20000000000005,
+                                    "right": 329.53218480000004,
+                                    "bottom": 521.6,
+                                    "width": 257.53218480000004,
+                                    "height": 14.399999999999977
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "ument for call",
+                                    "rect": {
+                                        "left": 316.9696392000001,
+                                        "top": 493.6,
+                                        "right": 404.90745840000005,
+                                        "bottom": 508,
+                                        "width": 87.9378192,
+                                        "height": 14.4
+                                    }
+                                },
+                                "1": {
+                                    "text": "push esi               // push first argu",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 507.20000000000005,
+                                        "right": 329.53218480000004,
+                                        "bottom": 521.6,
+                                        "width": 257.53218480000004,
+                                        "height": 14.4
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nument for call\npush esi               // push first argu"
+                            },
+                            "itlsData": {
+                                "type": "PROVISION",
+                                "value": {
+                                    "title": "provision_test_2",
+                                    "value": "provision_test_2",
+                                    "color": "red"
+                                }
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:1ksEfYG3rq",
+                                    "width": 415,
+                                    "height": 34,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "red"
+                        },
+                        "12ZXqQeNPQ": {
+                            "id": "12ZXqQeNPQ",
+                            "guid": "12ZXqQeNPQ",
+                            "created": "2019-03-24T21:28:02.444Z",
+                            "lastUpdated": "2019-03-24T21:28:02.444Z",
+                            "rects": {
+                                "0": {
+                                    "left": 285.5632752,
+                                    "top": 546.4,
+                                    "right": 442.59509520000006,
+                                    "bottom": 560.8000000000001,
+                                    "width": 157.03182000000004,
+                                    "height": 14.400000000000091
+                                },
+                                "1": {
+                                    "left": 72,
+                                    "top": 560,
+                                    "right": 310.6883664,
+                                    "bottom": 574.4,
+                                    "width": 238.6883664,
+                                    "height": 14.399999999999977
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "ted by register allocator",
+                                    "rect": {
+                                        "left": 285.5632752,
+                                        "top": 546.4,
+                                        "right": 442.59509520000006,
+                                        "bottom": 560.8000000000001,
+                                        "width": 157.03182000000004,
+                                        "height": 14.4
+                                    }
+                                },
+                                "1": {
+                                    "text": "test eax, eax          // (*) test ret",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 560,
+                                        "right": 310.6883664,
+                                        "bottom": 574.4,
+                                        "width": 238.6883664,
+                                        "height": 14.4
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nted by register allocator\ntest eax, eax          // (*) test ret"
+                            },
+                            "itlsData": {
+                                "type": "PROVISION",
+                                "value": {
+                                    "title": "provision_test_1",
+                                    "value": "provision_test_1",
+                                    "color": "yellow"
+                                }
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12S8u6fcp3",
+                                    "width": 462,
+                                    "height": 35,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "yellow"
+                        }
+                    },
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 3
+                    }
+                },
+                "4": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {
+                        "121xzcXFJW": {
+                            "id": "121xzcXFJW",
+                            "guid": "121xzcXFJW",
+                            "created": "2019-03-20T21:42:28.578Z",
+                            "lastUpdated": "2019-03-20T21:42:28.578Z",
+                            "rects": {
+                                "0": {
+                                    "left": 147.0031008,
+                                    "top": 111.2,
+                                    "right": 391.7546016,
+                                    "bottom": 124.80000000000001,
+                                    "width": 244.7515008,
+                                    "height": 13.600000000000009
+                                },
+                                "1": {
+                                    "left": 72,
+                                    "top": 124.80000000000001,
+                                    "right": 215.20000000000002,
+                                    "bottom": 138.4,
+                                    "width": 143.20000000000002,
+                                    "height": 13.599999999999994
+                                },
+                                "2": {
+                                    "left": 215.20000000000002,
+                                    "top": 128,
+                                    "right": 224.877096,
+                                    "bottom": 136.8,
+                                    "width": 9.677095999999977,
+                                    "height": 8.800000000000011
+                                },
+                                "3": {
+                                    "left": 228.8,
+                                    "top": 124.80000000000001,
+                                    "right": 391.2735296,
+                                    "bottom": 138.4,
+                                    "width": 162.4735296,
+                                    "height": 13.599999999999994
+                                },
+                                "4": {
+                                    "left": 72,
+                                    "top": 137.6,
+                                    "right": 195.69204480000002,
+                                    "bottom": 151.20000000000002,
+                                    "width": 123.69204480000002,
+                                    "height": 13.600000000000023
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "n line 2 is taken. This branch was not taken in the",
+                                    "rect": {
+                                        "left": 147.0031008,
+                                        "top": 111.2,
+                                        "right": 391.7546016,
+                                        "bottom": 124.80000000000001,
+                                        "width": 244.7515008,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "original trace, so this causes",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 124.80000000000001,
+                                        "right": 205.9515576,
+                                        "bottom": 138.4,
+                                        "width": 133.9515576,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "2": {
+                                    "text": "T",
+                                    "rect": {
+                                        "left": 208,
+                                        "top": 124.80000000000001,
+                                        "right": 215.20000000000002,
+                                        "bottom": 138.4,
+                                        "width": 7.2,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "3": {
+                                    "text": "16",
+                                    "rect": {
+                                        "left": 215.20000000000002,
+                                        "top": 128,
+                                        "right": 224.877096,
+                                        "bottom": 136.8,
+                                        "width": 9.677095999999999,
+                                        "height": 8.8
+                                    }
+                                },
+                                "4": {
+                                    "text": "to fail a guard and take a side exit.",
+                                    "rect": {
+                                        "left": 228.8,
+                                        "top": 124.80000000000001,
+                                        "right": 391.2735296,
+                                        "bottom": 138.4,
+                                        "width": 162.4735296,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "5": {
+                                    "text": "The exit is not yet hot, so",
+                                    "rect": {
+                                        "left": 72,
+                                        "top": 137.6,
+                                        "right": 195.69204480000002,
+                                        "bottom": 151.20000000000002,
+                                        "width": 123.69204480000002,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nn line 2 is taken. This branch was not taken in the\noriginal trace, so this causes\nT\n16\nto fail a guard and take a side exit.\nThe exit is not yet hot, so"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12dnQevByW",
+                                    "width": 398,
+                                    "height": 50,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "red"
+                        },
+                        "12NhYDue5A": {
+                            "id": "12NhYDue5A",
+                            "guid": "12NhYDue5A",
+                            "created": "2019-03-20T21:42:33.369Z",
+                            "lastUpdated": "2019-03-20T21:42:33.369Z",
+                            "rects": {
+                                "0": {
+                                    "left": 438.40000000000003,
+                                    "top": 681.6,
+                                    "right": 517.4568208,
+                                    "bottom": 695.2,
+                                    "width": 79.05682079999991,
+                                    "height": 13.600000000000023
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "Represe",
+                                    "rect": {
+                                        "left": 438.40000000000003,
+                                        "top": 681.6,
+                                        "right": 483.0162256,
+                                        "bottom": 695.2,
+                                        "width": 44.61622560000001,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "ntation",
+                                    "rect": {
+                                        "left": 483.0162256,
+                                        "top": 681.6,
+                                        "right": 517.4568208,
+                                        "bottom": 695.2,
+                                        "width": 34.440595200000004,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nReprese\nntation"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12NRPoeLrG",
+                                    "width": 99,
+                                    "height": 16,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "green"
+                        }
+                    },
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 4
+                    }
+                },
+                "5": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {
+                        "12eDyB5SQe": {
+                            "id": "12eDyB5SQe",
+                            "guid": "12eDyB5SQe",
+                            "created": "2019-03-20T21:42:41.292Z",
+                            "lastUpdated": "2019-03-20T21:42:41.292Z",
+                            "rects": {
+                                "0": {
+                                    "left": 440.95665920000005,
+                                    "top": 416,
+                                    "right": 742.0800048000001,
+                                    "bottom": 429.6,
+                                    "width": 301.12334560000005,
+                                    "height": 13.600000000000023
+                                },
+                                "1": {
+                                    "left": 423.20000000000005,
+                                    "top": 429.6,
+                                    "right": 742.0482232,
+                                    "bottom": 443.20000000000005,
+                                    "width": 318.8482232,
+                                    "height": 13.600000000000023
+                                },
+                                "2": {
+                                    "left": 423.20000000000005,
+                                    "top": 442.40000000000003,
+                                    "right": 482.09631440000004,
+                                    "bottom": 456,
+                                    "width": 58.896314399999994,
+                                    "height": 13.599999999999966
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "ead, the iteration is terminated with a side exit that will always",
+                                    "rect": {
+                                        "left": 440.95665920000005,
+                                        "top": 416,
+                                        "right": 742.0800048000001,
+                                        "bottom": 429.6,
+                                        "width": 301.1233456,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "fail and return to the interpreter. At the same time a new trace is",
+                                    "rect": {
+                                        "left": 423.20000000000005,
+                                        "top": 429.6,
+                                        "right": 742.0482232,
+                                        "bottom": 443.20000000000005,
+                                        "width": 318.8482232,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "2": {
+                                    "text": "recorded wi",
+                                    "rect": {
+                                        "left": 423.20000000000005,
+                                        "top": 442.40000000000003,
+                                        "right": 482.09631440000004,
+                                        "bottom": 456,
+                                        "width": 58.896314399999994,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nead, the iteration is terminated with a side exit that will always\nfail and return to the interpreter. At the same time a new trace is\nrecorded wi"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:12VwBzt5Y5",
+                                    "width": 398,
+                                    "height": 50,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "red"
+                        },
+                        "1XjwcfoRYP": {
+                            "id": "1XjwcfoRYP",
+                            "guid": "1XjwcfoRYP",
+                            "created": "2019-03-20T21:42:53.501Z",
+                            "lastUpdated": "2019-03-20T21:42:53.501Z",
+                            "rects": {
+                                "0": {
+                                    "left": 248.06306400000005,
+                                    "top": 124.80000000000001,
+                                    "right": 293.795368,
+                                    "bottom": 138.4,
+                                    "width": 45.73230399999994,
+                                    "height": 13.599999999999994
+                                }
+                            },
+                            "textSelections": {
+                                "0": {
+                                    "text": "n",
+                                    "rect": {
+                                        "left": 248.06306400000005,
+                                        "top": 124.80000000000001,
+                                        "right": 254.37096800000006,
+                                        "bottom": 138.4,
+                                        "width": 6.307904000000001,
+                                        "height": 13.600000000000001
+                                    }
+                                },
+                                "1": {
+                                    "text": "umbers",
+                                    "rect": {
+                                        "left": 254.370968,
+                                        "top": 124.80000000000001,
+                                        "right": 293.795368,
+                                        "bottom": 138.4,
+                                        "width": 39.4244,
+                                        "height": 13.600000000000001
+                                    }
+                                }
+                            },
+                            "text": {
+                                "TEXT": "\nn\numbers"
+                            },
+                            "images": {
+                                "screenshot": {
+                                    "type": "png",
+                                    "src": "screenshot:1ArLsvMuWD",
+                                    "width": 57,
+                                    "height": 17,
+                                    "rel": "screenshot"
+                                }
+                            },
+                            "notes": {},
+                            "questions": {},
+                            "flashcards": {},
+                            "color": "yellow"
+                        }
+                    },
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 5
+                    }
+                },
+                "6": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 6
+                    }
+                },
+                "7": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 7
+                    }
+                },
+                "8": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 8
+                    }
+                },
+                "9": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 9
+                    }
+                },
+                "10": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 10
+                    }
+                },
+                "11": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 11
+                    }
+                },
+                "12": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 12
+                    }
+                },
+                "13": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 13
+                    }
+                },
+                "14": {
+                    "pagemarks": {},
+                    "notes": {},
+                    "comments": {},
+                    "questions": {},
+                    "flashcards": {},
+                    "textHighlights": {},
+                    "areaHighlights": {},
+                    "screenshots": {},
+                    "thumbnails": {},
+                    "readingProgress": {},
+                    "pageInfo": {
+                        "num": 14
+                    }
+                }
+            }
+        };
+
+        var provisionList = [
+            {
+                title: 'provision_test_1',
+                id: '1',
+                value: 'provision_test_1',
+                color: 'yellow'
+            }, {
+                title: 'provision_test_2',
+                id: '2',
+                value: 'provision_test_2',
+                color: 'red'
+            }, {
+                title: 'provision_test_3',
+                id: '3',
+                value: 'provision_test_3',
+                color: 'blue'
+            }, {
+                title: 'provision_test_4',
+                id: '4',
+                value: 'provision_test_4',
+                color: 'green'
+            }
+        ];
+        if (!window['InteleasePDFReader']) {
+            window['InteleasePDFReader'] = {}
+        }
+        window['InteleasePDFReader']['onPDFReaderIsReady'] = (data) => {
+            window['InteleasePDFReader']['setAnnotations'](JSON.stringify(annotations));
+            window['InteleasePDFReader']['setProvisionList'](provisionList);
+        };
+        window['InteleasePDFReader']['onNewAnnotation'] = (data, extraParams) => {
+            console.log(data, extraParams);
+        };
+
+        window['InteleasePDFReader']['onAnnotationDeleted'] = (data, extraParams) => {
+            console.log('anotation deleted');
+            console.log(data, extraParams);
+        };
+        window['InteleasePDFReader']['onDocMetaUpdated'] = (data) => {
+            console.log(JSON.parse(data));
+        };
+        injectApp('/web/dist/chrome-bundle.js', fallbackLoader);
+
+    </script>
+
+    <!-- END polar customization -->
+
+    <!-- This snippet is used in production (included from viewer.html) -->
+    <link rel="resource" type="application/l10n" href="locale/locale.properties">
+
+    <script src="pdf.viewer.js"></script>
+
+</head>
+
+<body tabindex="1" class="loadingInProgress polar-pdfviewer">
+
+<div id="outerContainer" class="polar-viewer split split-horizontal">
+
+    <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+            <div class="splitToolbarButton toggled">
+                <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2"
+                        data-l10n-id="thumbs">
+                    <span data-l10n-id="thumbs_label">Thumbnails</span>
+                </button>
+                <button id="viewOutline" class="toolbarButton"
+                        title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3"
+                        data-l10n-id="document_outline">
+                    <span data-l10n-id="document_outline_label">Document Outline</span>
+                </button>
+                <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4"
+                        data-l10n-id="attachments">
+                    <span data-l10n-id="attachments_label">Attachments</span>
+                </button>
+            </div>
+        </div>
+        <div id="sidebarContent">
+            <div id="thumbnailView">
+            </div>
+            <div id="outlineView" class="hidden">
+            </div>
+            <div id="attachmentsView" class="hidden">
+            </div>
+        </div>
+        <div id="sidebarResizer" class="hidden"></div>
+    </div>  <!-- sidebarContainer -->
+
+    <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+            <div id="findbarInputContainer">
+                <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91"
+                       data-l10n-id="find_input">
+                <div class="splitToolbarButton">
+                    <button id="findPrevious" class="toolbarButton findPrevious"
+                            title="Find the previous occurrence of the phrase" tabindex="92"
+                            data-l10n-id="find_previous">
+                        <span data-l10n-id="find_previous_label">Previous</span>
+                    </button>
+                    <div class="splitToolbarButtonSeparator"></div>
+                    <button id="findNext" class="toolbarButton findNext" title="Find the next occurrence of the phrase"
+                            tabindex="93" data-l10n-id="find_next">
+                        <span data-l10n-id="find_next_label">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="findbarOptionsContainer">
+                <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+                <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight all</label>
+                <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+                <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match case</label>
+                <span id="findResultsCount" class="toolbarLabel hidden"></span>
+            </div>
+
+            <div id="findbarMessageContainer">
+                <span id="findMsg" class="toolbarLabel"></span>
+            </div>
+        </div>  <!-- findbar -->
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+            <div id="secondaryToolbarButtonContainer">
+                <button id="secondaryPresentationMode" class="secondaryToolbarButton presentationMode visibleLargeView"
+                        title="Switch to Presentation Mode" tabindex="51" data-l10n-id="presentation_mode">
+                    <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                </button>
+
+                <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView"
+                        title="Open File" tabindex="52" data-l10n-id="open_file">
+                    <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print"
+                        tabindex="53" data-l10n-id="print">
+                    <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView"
+                        title="Download" tabindex="54" data-l10n-id="download">
+                    <span data-l10n-id="download_label">Download</span>
+                </button>
+
+                <a href="#" id="secondaryViewBookmark" class="secondaryToolbarButton bookmark visibleSmallView"
+                   title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+                    <span data-l10n-id="bookmark_label">Current View</span>
+                </a>
+
+                <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+                <button id="firstPage" class="secondaryToolbarButton firstPage" title="Go to First Page" tabindex="56"
+                        data-l10n-id="first_page">
+                    <span data-l10n-id="first_page_label">Go to First Page</span>
+                </button>
+                <button id="lastPage" class="secondaryToolbarButton lastPage" title="Go to Last Page" tabindex="57"
+                        data-l10n-id="last_page">
+                    <span data-l10n-id="last_page_label">Go to Last Page</span>
+                </button>
+
+                <div class="horizontalToolbarSeparator"></div>
+
+                <button id="pageRotateCw" class="secondaryToolbarButton rotateCw" title="Rotate Clockwise" tabindex="58"
+                        data-l10n-id="page_rotate_cw">
+                    <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+                </button>
+                <button id="pageRotateCcw" class="secondaryToolbarButton rotateCcw" title="Rotate Counterclockwise"
+                        tabindex="59" data-l10n-id="page_rotate_ccw">
+                    <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+                </button>
+
+                <div class="horizontalToolbarSeparator"></div>
+
+                <button id="cursorSelectTool" class="secondaryToolbarButton selectTool toggled"
+                        title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool">
+                    <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+                </button>
+                <button id="cursorHandTool" class="secondaryToolbarButton handTool" title="Enable Hand Tool"
+                        tabindex="61" data-l10n-id="cursor_hand_tool">
+                    <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+                </button>
+
+                <div class="horizontalToolbarSeparator"></div>
+
+                <button id="scrollVertical" class="secondaryToolbarButton scrollVertical toggled"
+                        title="Use Vertical Scrolling" tabindex="62" data-l10n-id="scroll_vertical">
+                    <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+                </button>
+                <button id="scrollHorizontal" class="secondaryToolbarButton scrollHorizontal"
+                        title="Use Horizontal Scrolling" tabindex="63" data-l10n-id="scroll_horizontal">
+                    <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+                </button>
+                <button id="scrollWrapped" class="secondaryToolbarButton scrollWrapped" title="Use Wrapped Scrolling"
+                        tabindex="64" data-l10n-id="scroll_wrapped">
+                    <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+                </button>
+
+                <div class="horizontalToolbarSeparator"></div>
+
+                <button id="spreadNone" class="secondaryToolbarButton spreadNone toggled"
+                        title="Do not join page spreads" tabindex="65" data-l10n-id="spread_none">
+                    <span data-l10n-id="spread_none_label">No Spreads</span>
+                </button>
+                <button id="spreadOdd" class="secondaryToolbarButton spreadOdd"
+                        title="Join page spreads starting with odd-numbered pages" tabindex="66"
+                        data-l10n-id="spread_odd">
+                    <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+                </button>
+                <button id="spreadEven" class="secondaryToolbarButton spreadEven"
+                        title="Join page spreads starting with even-numbered pages" tabindex="67"
+                        data-l10n-id="spread_even">
+                    <span data-l10n-id="spread_even_label">Even Spreads</span>
+                </button>
+
+                <div class="horizontalToolbarSeparator"></div>
+
+                <button id="documentProperties" class="secondaryToolbarButton documentProperties"
+                        title="Document Properties…" tabindex="68" data-l10n-id="document_properties">
+                    <span data-l10n-id="document_properties_label">Document Properties…</span>
+                </button>
+
+                <!-- BEGIN polar customization -->
+
+                <!--<div class="horizontalToolbarSeparator"></div>-->
+
+                <!--<button id="polarCreatePagemarksAcrossPages" class="secondaryToolbarButton documentProperties" title="">-->
+                <!--<span>Create pagemark range...</span>-->
+                <!--</button>-->
+
+                <!--<button id="polarCreatePagemarksAcrossPages2" class="secondaryToolbarButton polarCreatePagemarkRanges documentProperties fa fa-plus-circle polar-fa-button" title="Create pagemarks for pages...">-->
+                <!--&lt;!&ndash;<span>Create pagemarks for range</span>&ndash;&gt;-->
+                <!--<span>Document Properties...</span>-->
+                <!--</button>-->
+
+
+                <!--<button class="secondaryToolbarButton documentProperties" title="">-->
+                <!--<span>Create pagemarks for range</span>-->
+                <!--</button>-->
+
+                <!-- END polar customization -->
+
+            </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+            <div id="toolbarContainer">
+                <div id="toolbarViewer">
+                    <div id="toolbarViewerLeft">
+                        <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11"
+                                data-l10n-id="toggle_sidebar">
+                            <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                        </button>
+                        <div class="toolbarButtonSpacer"></div>
+                        <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12"
+                                data-l10n-id="findbar">
+                            <span data-l10n-id="findbar_label">Find</span>
+                        </button>
+                        <div class="splitToolbarButton hiddenSmallView">
+                            <button class="toolbarButton pageUp" title="Previous Page" id="previous" tabindex="13"
+                                    data-l10n-id="previous">
+                                <span data-l10n-id="previous_label">Previous</span>
+                            </button>
+                            <div class="splitToolbarButtonSeparator"></div>
+                            <button class="toolbarButton pageDown" title="Next Page" id="next" tabindex="14"
+                                    data-l10n-id="next">
+                                <span data-l10n-id="next_label">Next</span>
+                            </button>
+                        </div>
+                        <input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1"
+                               size="4" min="1" tabindex="15" data-l10n-id="page">
+                        <span id="numPages" class="toolbarLabel"></span>
+                    </div>
+                    <div id="toolbarViewerRight">
+                        <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView"
+                                title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
+                            <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+                        </button>
+
+                        <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File"
+                                tabindex="32" data-l10n-id="open_file">
+                            <span data-l10n-id="open_file_label">Open</span>
+                        </button>
+
+                        <button id="print" class="toolbarButton print hiddenMediumView" title="Print" tabindex="33"
+                                data-l10n-id="print">
+                            <span data-l10n-id="print_label">Print</span>
+                        </button>
+
+                        <button id="download" class="toolbarButton download hiddenMediumView" title="Download"
+                                tabindex="34" data-l10n-id="download">
+                            <span data-l10n-id="download_label">Download</span>
+                        </button>
+                        <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView"
+                           title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                            <span data-l10n-id="bookmark_label">Current View</span>
+                        </a>
+
+                        <div class="verticalToolbarSeparator hiddenSmallView"></div>
+
+                        <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="36"
+                                data-l10n-id="tools">
+                            <span data-l10n-id="tools_label">Tools</span>
+                        </button>
+                    </div>
+                    <div id="toolbarViewerMiddle">
+                        <div class="splitToolbarButton">
+                            <button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" tabindex="21"
+                                    data-l10n-id="zoom_out">
+                                <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                            </button>
+                            <div class="splitToolbarButtonSeparator"></div>
+                            <button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" tabindex="22"
+                                    data-l10n-id="zoom_in">
+                                <span data-l10n-id="zoom_in_label">Zoom In</span>
+                            </button>
+                        </div>
+                        <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected"
+                            data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width"
+                            data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 50 }'>50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 75 }'>75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 100 }'>100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 125 }'>125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args='{ "scale": 150 }'>150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 200 }'>200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 300 }'>300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent"
+                            data-l10n-args='{ "scale": 400 }'>400%</option>
+                  </select>
+                </span>
+                    </div>
+                </div>
+                <div id="loadingBar">
+                    <div class="progress">
+                        <div class="glimmer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <menu type="context" id="viewerContextMenu">
+            <menuitem id="contextFirstPage" label="First Page"
+                      data-l10n-id="first_page"></menuitem>
+            <menuitem id="contextLastPage" label="Last Page"
+                      data-l10n-id="last_page"></menuitem>
+            <menuitem id="contextPageRotateCw" label="Rotate Clockwise"
+                      data-l10n-id="page_rotate_cw"></menuitem>
+            <menuitem id="contextPageRotateCcw" label="Rotate Counter-Clockwise"
+                      data-l10n-id="page_rotate_ccw"></menuitem>
+        </menu>
+
+
+        <div id="viewerContainer" tabindex="0">
+
+            <!-- BEGIN polar customization -->
+            <div id="polar-header" class="polar-pdf-header" style="display: none;">
+
+                <div id="polar-header-body">
+
+                    <div id="polar-progress">
+                        <progress value="0.0"></progress>
+                    </div>
+
+                    <div id="set-title">
+                        <div id="set-title-form">
+                            <input id="set-title-input" type="text" placeholder="Untitled" autocomplete="false">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- END polar customization -->
+
+            <div>
+
+                <div id="viewer" class="pdfViewer">
+
+
+                </div>
+            </div>
+
+            <!-- BEGIN polar customization -->
+            <div id="polar-footer" style="display: none;">
+                <div id="polar-doc-overview"></div>
+            </div>
+            <!-- END polar customization -->
+
+        </div>
+
+        <div id="errorWrapper" hidden='true'>
+            <div id="errorMessageLeft">
+                <span id="errorMessage"></span>
+                <button id="errorShowMore" data-l10n-id="error_more_info">
+                    More Information
+                </button>
+                <button id="errorShowLess" data-l10n-id="error_less_info" hidden='true'>
+                    Less Information
+                </button>
+            </div>
+            <div id="errorMessageRight">
+                <button id="errorClose" data-l10n-id="error_close">
+                    Close
+                </button>
+            </div>
+            <div class="clearBoth"></div>
+            <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
+        </div>
+    </div> <!-- mainContainer -->
+
+    <div id="overlayContainer" class="hidden">
+        <div id="passwordOverlay" class="container hidden">
+            <div class="dialog">
+                <div class="row">
+                    <p id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</p>
+                </div>
+                <div class="row">
+                    <input type="password" id="password" class="toolbarField">
+                </div>
+                <div class="buttonRow">
+                    <button id="passwordCancel" class="overlayButton"><span data-l10n-id="password_cancel">Cancel</span>
+                    </button>
+                    <button id="passwordSubmit" class="overlayButton"><span data-l10n-id="password_ok">OK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="documentPropertiesOverlay" class="container hidden">
+            <div class="dialog">
+                <div class="row">
+                    <span data-l10n-id="document_properties_file_name">File name:</span>
+                    <p id="fileNameField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_file_size">File size:</span>
+                    <p id="fileSizeField">-</p>
+                </div>
+                <div class="separator"></div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_title">Title:</span>
+                    <p id="titleField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_author">Author:</span>
+                    <p id="authorField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_subject">Subject:</span>
+                    <p id="subjectField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_keywords">Keywords:</span>
+                    <p id="keywordsField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_creation_date">Creation Date:</span>
+                    <p id="creationDateField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_modification_date">Modification Date:</span>
+                    <p id="modificationDateField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_creator">Creator:</span>
+                    <p id="creatorField">-</p>
+                </div>
+                <div class="separator"></div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_producer">PDF Producer:</span>
+                    <p id="producerField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_version">PDF Version:</span>
+                    <p id="versionField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_page_count">Page Count:</span>
+                    <p id="pageCountField">-</p>
+                </div>
+                <div class="row">
+                    <span data-l10n-id="document_properties_page_size">Page Size:</span>
+                    <p id="pageSizeField">-</p>
+                </div>
+                <div class="buttonRow">
+                    <button id="documentPropertiesClose" class="overlayButton"><span
+                            data-l10n-id="document_properties_close">Close</span></button>
+                </div>
+            </div>
+        </div>
+        <div id="printServiceOverlay" class="container hidden">
+            <div class="dialog">
+                <div class="row">
+                    <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+                </div>
+                <div class="row">
+                    <progress value="0" max="100"></progress>
+                    <span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }'
+                          class="relative-progress">0%</span>
+                </div>
+                <div class="buttonRow">
+                    <button id="printCancel" class="overlayButton"><span
+                            data-l10n-id="print_progress_close">Cancel</span></button>
+                </div>
+            </div>
+        </div>
+    </div>  <!-- overlayContainer -->
+
+</div> <!-- outerContainer -->
+<div id="printContainer"></div>
+
+<div style="display: none;" class="polar-sidebar split split-horizontal">
+    <div></div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Dictionaries_1 = require("../../js/util/Dictionaries");
+function canonicalize(obj) {
+    delete obj.uuid;
+    const result = Dictionaries_1.Dictionaries.sorted(obj);
+    return result;
+}
+exports.canonicalize = canonicalize;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdGluZy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3RpbmcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2REFBd0Q7QUFFeEQsU0FBZ0IsWUFBWSxDQUFJLEdBQU07SUFDbEMsT0FBYyxHQUFJLENBQUMsSUFBSSxDQUFDO0lBQ3hCLE1BQU0sTUFBTSxHQUFHLDJCQUFZLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQ3hDLE9BQU8sTUFBTSxDQUFDO0FBQ2xCLENBQUM7QUFKRCxvQ0FJQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RGljdGlvbmFyaWVzfSBmcm9tICcuLi8uLi9qcy91dGlsL0RpY3Rpb25hcmllcyc7XG5cbmV4cG9ydCBmdW5jdGlvbiBjYW5vbmljYWxpemU8VD4ob2JqOiBUKSB7XG4gICAgZGVsZXRlICg8YW55PiBvYmopLnV1aWQ7XG4gICAgY29uc3QgcmVzdWx0ID0gRGljdGlvbmFyaWVzLnNvcnRlZChvYmopO1xuICAgIHJldHVybiByZXN1bHQ7XG59XG4iXX0=

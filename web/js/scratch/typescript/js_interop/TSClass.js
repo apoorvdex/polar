@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class TSClass {
+    constructor(legacy) {
+        this.legacy = legacy;
+        legacy.myFunction();
+    }
+}
+exports.TSClass = TSClass;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVFNDbGFzcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlRTQ2xhc3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFHQSxNQUFhLE9BQU87SUFJaEIsWUFBWSxNQUFtQjtRQUMzQixJQUFJLENBQUMsTUFBTSxHQUFHLE1BQU0sQ0FBQztRQUNyQixNQUFNLENBQUMsVUFBVSxFQUFFLENBQUM7SUFDeEIsQ0FBQztDQUVKO0FBVEQsMEJBU0MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7TGVnYWN5Q2xhc3N9IGZyb20gXCIuL0xlZ2FjeUNsYXNzXCI7XG5cbmV4cG9ydCBjbGFzcyBUU0NsYXNzIHtcblxuICAgIHByaXZhdGUgbGVnYWN5OiBMZWdhY3lDbGFzcztcblxuICAgIGNvbnN0cnVjdG9yKGxlZ2FjeTogTGVnYWN5Q2xhc3MpIHtcbiAgICAgICAgdGhpcy5sZWdhY3kgPSBsZWdhY3k7XG4gICAgICAgIGxlZ2FjeS5teUZ1bmN0aW9uKCk7XG4gICAgfVxuXG59XG5cblxuIl19

@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class DistConfig {
+}
+DistConfig.ENABLE_UPDATES = false;
+exports.DistConfig = DistConfig;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU25hcFN0b3JlRGlzdENvbmZpZy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlNuYXBTdG9yZURpc3RDb25maWcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxNQUFhLFVBQVU7O0FBRUkseUJBQWMsR0FBWSxLQUFLLENBQUM7QUFGM0QsZ0NBSUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgRGlzdENvbmZpZyB7XG5cbiAgICBwdWJsaWMgc3RhdGljIHJlYWRvbmx5IEVOQUJMRV9VUERBVEVTOiBib29sZWFuID0gZmFsc2U7XG5cbn1cbiJdfQ==

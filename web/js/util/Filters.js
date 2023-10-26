@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Filters {
+}
+Filters.PRESENT = (value) => value !== null && value !== undefined;
+exports.Filters = Filters;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmlsdGVycy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkZpbHRlcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxNQUFhLE9BQU87O0FBRUYsZUFBTyxHQUNqQixDQUFLLEtBQVEsRUFBRSxFQUFFLENBQUMsS0FBSyxLQUFLLElBQUksSUFBSSxLQUFLLEtBQUssU0FBUyxDQUFBO0FBSC9ELDBCQUtDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIEZpbHRlcnMge1xuXG4gICAgcHVibGljIHN0YXRpYyBQUkVTRU5UID1cbiAgICAgICAgPFQ+ICh2YWx1ZTogVCkgPT4gdmFsdWUgIT09IG51bGwgJiYgdmFsdWUgIT09IHVuZGVmaW5lZFxuXG59XG4iXX0=

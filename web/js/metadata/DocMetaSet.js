@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class DocMetaSet {
+    constructor(...docMetas) {
+        this.docMetas = docMetas;
+    }
+}
+exports.DocMetaSet = DocMetaSet;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRG9jTWV0YVNldC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkRvY01ldGFTZXQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFLQSxNQUFhLFVBQVU7SUFJbkIsWUFBbUIsR0FBRyxRQUFtQjtRQUNyQyxJQUFJLENBQUMsUUFBUSxHQUFHLFFBQVEsQ0FBQztJQUM3QixDQUFDO0NBRUo7QUFSRCxnQ0FRQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RG9jTWV0YX0gZnJvbSAnLi9Eb2NNZXRhJztcblxuLyoqXG4gKiBBIHNldCBvZiBkb2N1bWVudHMgYXMgYSBidW5kbGUuXG4gKi9cbmV4cG9ydCBjbGFzcyBEb2NNZXRhU2V0IHtcblxuICAgIHB1YmxpYyByZWFkb25seSBkb2NNZXRhczogRG9jTWV0YVtdO1xuXG4gICAgcHVibGljIGNvbnN0cnVjdG9yKC4uLmRvY01ldGFzOiBEb2NNZXRhW10pIHtcbiAgICAgICAgdGhpcy5kb2NNZXRhcyA9IGRvY01ldGFzO1xuICAgIH1cblxufVxuIl19

@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+describe('Web Workers', function () {
+    it("TypedWorker", function () {
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFVQSxRQUFRLENBQUMsYUFBYSxFQUFFO0lBRXBCLEVBQUUsQ0FBQyxhQUFhLEVBQUU7SUFJbEIsQ0FBQyxDQUFDLENBQUM7QUFFUCxDQUFDLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGltcG9ydCBNb2NoYSBmcm9tICdtb2NoYSc7XG4vLyBNb2NoYS5zZXR1cCgnYmRkJyk7XG4vLyAvLyBtb2NoYS5jaGVja0xlYWtzKCk7XG4vLyBNb2NoYS5ydW4oKTtcblxuXG5pbXBvcnQge2Fzc2VydH0gZnJvbSAnY2hhaSc7XG5cblxuXG5kZXNjcmliZSgnV2ViIFdvcmtlcnMnLCBmdW5jdGlvbigpIHtcblxuICAgIGl0KFwiVHlwZWRXb3JrZXJcIiwgZnVuY3Rpb24oKSB7XG5cblxuXG4gICAgfSk7XG5cbn0pO1xuXG4iXX0=

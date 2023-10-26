@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var PagemarkType;
+(function (PagemarkType) {
+    PagemarkType["SINGLE_COLUMN"] = "SINGLE_COLUMN";
+    PagemarkType["DOUBLE_COLUMN"] = "DOUBLE_COLUMN";
+    PagemarkType["TRIPLE_COLUMN"] = "TRIPLE_COLUMN";
+})(PagemarkType = exports.PagemarkType || (exports.PagemarkType = {}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFnZW1hcmtUeXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUGFnZW1hcmtUeXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsSUFBWSxZQUlYO0FBSkQsV0FBWSxZQUFZO0lBQ3BCLCtDQUErQixDQUFBO0lBQy9CLCtDQUErQixDQUFBO0lBQy9CLCtDQUErQixDQUFBO0FBQ25DLENBQUMsRUFKVyxZQUFZLEdBQVosb0JBQVksS0FBWixvQkFBWSxRQUl2QiIsInNvdXJjZXNDb250ZW50IjpbIlxuZXhwb3J0IGVudW0gUGFnZW1hcmtUeXBlIHtcbiAgICBTSU5HTEVfQ09MVU1OID0gXCJTSU5HTEVfQ09MVU1OXCIsXG4gICAgRE9VQkxFX0NPTFVNTiA9IFwiRE9VQkxFX0NPTFVNTlwiLFxuICAgIFRSSVBMRV9DT0xVTU4gPSBcIlRSSVBMRV9DT0xVTU5cIlxufVxuIl19
